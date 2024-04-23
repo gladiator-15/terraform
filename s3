@@ -1,0 +1,28 @@
+provider "aws" {
+  region = "us-west-2" # Change to your desired region
+}
+
+resource "aws_s3_bucket" "my_bucket" {
+  bucket = "my-unique-bucket-name" # Change to your desired bucket name
+  acl    = "private" # Change access control settings as needed
+
+  # Uncomment the following if you want to enable versioning for the bucket
+  # versioning {
+  #   enabled = true
+  # }
+
+  # Uncomment the following if you want to enable server-side encryption for the bucket
+  # server_side_encryption_configuration {
+  #   rule {
+  #     apply_server_side_encryption_by_default {
+  #       sse_algorithm = "AES256"
+  #     }
+  #   }
+  # }
+
+  # Uncomment the following if you want to enable logging for the bucket
+  # logging {
+  #   target_bucket = "logging-bucket-name"
+  #   target_prefix = "logs/"
+  # }
+}
